@@ -1,8 +1,24 @@
-import 'package:AIAGroup_CodingAssesment/applications/vendingMachine.dart';
-import 'package:AIAGroup_CodingAssesment/sources/strings.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'package:AIAGroup_CodingAssesment/applications/vendingMachine.dart';
+import 'package:AIAGroup_CodingAssesment/sources/strings.dart';
+import 'package:AIAGroup_CodingAssesment/widgets/themes.dart';
+
+void main()
+{
+  Themes.defaultTheme();
+
+  runZoned(()=> runApp(MyApp()), onError: (dynamic error, dynamic stack){
+    print("");
+    print("error -> $error");
+    print("");
+    print("stack -> $stack");
+    print("");
+  });
+
+  // runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget
 {
@@ -10,12 +26,25 @@ class MyApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      title: '@git-maspaad',
+      checkerboardOffscreenLayers: false,
+      checkerboardRasterCacheImages: false,
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
+      darkTheme: ThemeData.light(),
+      locale: Locale.cachedLocale,
+      showPerformanceOverlay: false,
+      showSemanticsDebugger: false,
+      title: "${Strings.appName}",
       theme: ThemeData(
         fontFamily: "${Strings.fontFamily}",
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.black,
+        primaryColorDark: Colors.black,
+        textSelectionColor: Colors.white,
       ),
-      home: VendingMachine(),
+      routes: <String, WidgetBuilder>
+      {
+        '/': (BuildContext context)=> VendingMachine(),
+      },
     );
   }
 }
