@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.github.gitmaspaad;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

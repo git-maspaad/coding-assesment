@@ -1,22 +1,46 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.demo">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.github.gitmaspaad"
+    android:installLocation="internalOnly"
+    android:protectionLevel="signature">
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_GPS" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.CAMERA" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.INTERNET" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.READ_PROFILE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.VIBRATE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:protectionLevel="signature"/>
+
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="demo"
-        android:icon="@mipmap/ic_launcher">
+        android:label="AIA Group"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:exported="false"
+        android:protectionLevel="signature">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:protectionLevel="signature">
             <!-- This keeps the window background of the activity showing
                  until Flutter renders its first frame. It can be removed if
                  there is no splash screen (such as the default splash screen
