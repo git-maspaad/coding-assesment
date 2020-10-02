@@ -25,11 +25,11 @@ You can read how to do it bellow :
 - [Setup your ADB get ready for Android development](https://flutter-us.blogspot.com/2020/08/how-to-setup-your-adb-android-debug.html)
 - [Open simulator from terminal for iOS development](https://flutter-us.blogspot.com/2019/01/mac-open-simulator-from-terminal.html)
 
-Actually, if there were only one device you can use this command
+Actually, if there were only one device you can use this command<br/>
 $ flutter run --debug (enter)
 
-see another available devices on your connected device hosts
+see another available devices on your connected device hosts<br/>
 $ flutter devices (enter)
 
-run specified devices
+run specified devices<br/>
 $ flutter run --debug -d "iPhone X" (enter)
