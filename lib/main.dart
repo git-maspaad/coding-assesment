@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget
     return MaterialApp(
       checkerboardOffscreenLayers: false,
       checkerboardRasterCacheImages: false,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       debugShowMaterialGrid: false,
       darkTheme: ThemeData.light(),
       locale: Locale.cachedLocale,

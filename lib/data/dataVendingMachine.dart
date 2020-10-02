@@ -3,16 +3,20 @@ class DataVendingMachine
 
   static const List acceptableMoney = [
     {
-      "label": "2000"
+      "label": "2000",
+      "withNumberFormat": "2.000"
     },
     {
-      "label": "5000"
+      "label": "5000",
+      "withNumberFormat": "5.000"
     },
     {
-      "label": "10000"
+      "label": "10000",
+      "withNumberFormat": "10.000"
     },
     {
-      "label": "20000"
+      "label": "20000",
+      "withNumberFormat": "20.000"
     }
   ];
   

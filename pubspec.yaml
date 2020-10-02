@@ -4,7 +4,8 @@ description: Open source code library.
 version: 1.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=1.12.8 <3.0.0"
+  # sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -25,7 +26,6 @@ flutter:
   - assets/images/img_logo_aiadefault.png
   - assets/images/img_logo_aiared.png
   - assets/images/img_logo_aiawhite.png
-  
   
   fonts:
     - family: Montserrat

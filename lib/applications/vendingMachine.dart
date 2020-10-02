@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:AIAGroup_CodingAssesment/data/dataVendingMachine.dart';
 import 'package:AIAGroup_CodingAssesment/sources/strings.dart';
+import 'package:AIAGroup_CodingAssesment/views/vendingMachineItem.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,8 @@ class VendingMachine extends StatefulWidget
 
 class _VendingMachineState extends State<VendingMachine>
 {
+  GlobalKey<ScaffoldState> scaffoldState;
+
   List<Widget> sellItems = List();
 
   initData() async
@@ -45,15 +50,20 @@ class _VendingMachineState extends State<VendingMachine>
   @override
   Widget build(BuildContext context)
   {
+    scaffoldState = GlobalKey<ScaffoldState>();
+
     setupConfig();
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomPadding: false,
+      key: scaffoldState,
       appBar: AppBar(
         backgroundColor: Colors.red[900],
         centerTitle: true,
         leading: SizedBox.shrink(),
         title: Text(
-          "Vending Machine",
+          "${Strings.appName}",
           style: TextStyle(
             color: Colors.white,
             decoration: TextDecoration.none,
@@ -65,7 +75,7 @@ class _VendingMachineState extends State<VendingMachine>
         ),
         toolbarOpacity: 0.0,
       ),
-      backgroundColor: Colors.red[900],
+      backgroundColor: Colors.white,
       body: _body(context: context),
     );
   }
@@ -89,7 +99,6 @@ class _VendingMachineState extends State<VendingMachine>
         ),
         width: width,
         height: height,
-        color: Colors.white,
         padding: EdgeInsets.all(10.0),
       ),
       removeBottom: true,
@@ -103,6 +112,10 @@ class _VendingMachineState extends State<VendingMachine>
   {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height / 3.0;
+
+    List itemData = [
+      data[index]
+    ];
 
     return Material(
       child: Container(
@@ -185,15 +198,28 @@ class _VendingMachineState extends State<VendingMachine>
             // end: information
 
             // begin: tap area
-            Material(
-              child: InkWell(
-                child: Container(
-                  color: Colors.transparent,
+            Hero(
+              child: Material(
+                child: InkWell(
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VendingMachineItem(
+                          tag: "_vendingMachineItem" + "${data[index]["id"]}",
+                          data: itemData,
+                        )
+                      )
+                    );
+                  },
                 ),
-                onTap: ()=> print("Click item -> ${data[index]["label"]}"),
+                color: Colors.transparent,
+                elevation: 0.0,
               ),
-              color: Colors.transparent,
-              elevation: 0.0,
+              tag: "_vendingMachineItem" + "${data[index]["id"]}"
             ),
             // end: tap area
           ],
