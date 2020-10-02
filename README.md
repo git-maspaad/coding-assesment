@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screen Shoots
 
-![Gambar 1.0](assets/images/screenShoot_20201002-084053.jpg?raw=true "Gambar 1.0")
+![Screen Shoots Gallery](assets/images/screenShoot_20201002-085800.png?raw=true "Screen Shoots Gallery")
